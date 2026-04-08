@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ChatbotQuery extends Model
 {
-    //
+    protected $fillable = [
+        'query_name'
+    ];
 }
