@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ChatbotConstructorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,5 +17,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Chatbot constructor
+Route::get('/chatbot-constuctor',[ChatbotConstructorController::class, 'index'])->middleware('auth')->name('chatbot-constructor');
 
 require __DIR__.'/auth.php';

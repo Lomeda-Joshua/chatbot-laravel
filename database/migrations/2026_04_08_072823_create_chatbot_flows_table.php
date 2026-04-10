@@ -13,11 +13,18 @@ return new class extends Migration
     {
         Schema::create('chatbot_flows', function (Blueprint $table) {
             $table->id();
-            $table->integer('queries_id');
-            $table->integer('actions_id');
-            $table->string('goto');
-            $table->string('created_by');
-            $table->string('updated_by');
+            $table->integer('group_id');
+            $table->integer('sequence');
+            $table->string('query_name');
+            $table->json('choices')->nullable();
+            $table->json('goto')->nullable(); 
+            $table->json('type')->nullable();
+            $table->json('action')->nullable();
+            $table->tinyInteger('is_active')->nullable();
+            $table->tinyInteger('is_submit')->nullable();
+            $table->tinyInteger('is_ticket')->nullable();
+            $table->integer('created_by');
+            $table->integer('updated_by');
             $table->timestamps();
         });
     }

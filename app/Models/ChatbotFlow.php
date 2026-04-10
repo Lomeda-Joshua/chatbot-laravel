@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class ChatbotFlow extends Model
 {
     protected $fillable = [
-        'queries_id',
-        'actions_id',
+        'group_id',
+        'sequence',
+        'query_name',
         'goto',
+        'type',
+        'action',
+        'is_active',
+        'is_submit',
+        'is_ticket',
         'created_by',
         'updated_by'
         ];

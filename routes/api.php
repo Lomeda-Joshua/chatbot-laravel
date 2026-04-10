@@ -10,4 +10,5 @@ Route::get('/user', function (Request $request) {
 
 
 Route::get('/data', [ChatController::class, 'index'])->middleware('auth:sanctum');
+
 Route::get('/get-data/{id}', [ChatController::class, 'data']);
